@@ -1,38 +1,369 @@
-.App {
-  text-align: center;
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,500&display=swap');
+
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+:root {
+  --main-color : rgb(40, 40, 123);
+  --second-color : rgb(246, 195, 101);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/*GENERAL STYLING*/
+body{
+  font-family: 'Poppins', sans-serif;
+}
+img{
+  width: 1rem;
+  height: 1rem;
+  aspect-ratio: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+a{
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 1.2rem;
+  transition:  all 1.5s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+li{
+  list-style: none;
+}
+h1,h2,h3,p{
+  color: var(--main-color);
+}
+
+p{
+  font-size: 1.2rem;
+  font-weight: light;
+}
+
+button{
+  border: 2px solid var(--main-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: transparent;
+  transition: all 1.5s;
+}
+button:hover{
+  background-color: var(--second-color);
+  cursor: pointer;
+}
+
+a:hover{
+  color: var(--second-color);
+  text-decoration: underline;
+}
+
+.container {
+  width: 80%;
+  margin:  10rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .right{
+  width: 45%;
+}
+
+.container .left{
+  width: 40%;
+}
+
+
+.show-btn{
+  display: none;
+}
+
+
+.navbar{
+  margin-top: 1.2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.navbar h1{
+  color: var(--main-color);
+}
+
+
+.navbar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+
+
+
+/*RESPONSIVE NAV BAR STYLE*/
+.responsive{
+  height: 100%;
+  width:20rem;
+  background-color: rgb(126, 167, 234);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0;
+  padding-top: 2rem;
+}
+.res-btn{
+ margin-left: 10px;
+}
+.responsive ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+/*STYLING OF CONTAINERS  */
+
+.container .right{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 3rem;
+} .container .right h1{
+  font-size: 3.5rem;
+}
+ .container .left img{
+  width: 100%;
+  height: 20rem;
+}
+
+
+
+/*STYLING OF RESPONSIVE WITH USESTATE HOOK*/
+
+
+
+
+/*STYLING OF THE FIRST PAGE*/
+.buttons{
+  display: flex;
+  gap: 3rem;
+}
+
+.buttons > button{
+  width: 10rem;
+  font-family: 'Poppins'  , sans-serif;
+  font-size: 1rem;
+  border: none;
+  
+}
+ .btn-one{
+  background-color: var(--main-color);
   color: white;
+  box-shadow: 1px 1px 1px 1px rgb(159, 154, 154);
+ }
+
+ .btn-two{
+  border: none;
+  color: var(--main-color);
+  background-color: rgba(152, 142, 142 , 0.58);
+ }
+
+ /*STYLING OF THE SECOND PAGE*/
+ .folder-M{
+  width: 30%;
+  margin: 10rem auto;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ }
+
+ .folder-M h1 , .folder-M p , .folder-M button{
+  margin-bottom: 2rem;
+ }
+
+ .folder-M button{
+  width: 10rem;
+  font-family: 'Poppins'  , sans-serif;
+  font-size: 1rem;
+  border: none;
+ }
+
+ .folder-M h1{
+  font-size: 3.5rem;
+ }
+
+ @media screen and (max-width: 800px) {
+  .show-btn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  .navbar ul{
+    display: none;
+  }
+  .page2 .folder-M{
+  width: 90%;
+  }
+  .page1 .container{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .page1 .container .right{
+     width: 100%;
+  }
+  
+  .page1 .container .left{
+    width: 100%;
+  }
+
+  .page5 .container{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .page5 .container .right{
+     width: 100%;
+  }
+  
+  .page5 .container .left{
+    width: 100%;
+  }
+
+  .page6 .container{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .page6 .container .right{
+     width: 100%;
+  }
+  
+  .page6 .container .left{
+    width: 100%;
+  }
+
+  .page4 .container{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .page4 .container .right{
+     width: 100%;
+  }
+  
+  .page4 .container .left{
+    width: 100%;
+  }
+  .page3 .container{
+    width: 90%;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .page3 .container .right{
+     width: 100%;
+  }
+  
+  .page3 .container .left{
+    width: 100%;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/*STYLING OF PAGE3*/
+.page3 .cards{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+ 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page3 .cards .card img{
+  height: 2rem;
+  width: 2rem;
+  order: 1;
 }
+.page3 .right{
+order: 2;
+}
+.page3 .cards .card{
+  height: 10rem;
+}
+.page3 .cards .card p{
+  font-size: 0.8rem;
+}
+
+/*STYLING PAGE5*/
+.page5 .right{
+  order: 2;
+}
+
+.page5 img{
+  order: 1;
+}
+
+/*STYLING PAGE6*/
+.page6 .right{
+  order: 1;
+}
+.page6 .left{
+  order: 2;
+}
+
+.page6 .left {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+
+.page6 .left label{
+  color: var(--main-color);
+  font-weight: bold;
+}
+.page6 .left input{
+  border: none;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(174, 171, 171 , 0.5);
+}
+
+.page6 .left button{
+  background-color: var(--main-color);
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Poppins' , sans-serif;
+}
+
+/*ANNIMATIONS*/
